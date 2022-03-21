@@ -1,0 +1,14 @@
+%underline {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $sixth-color;
+    width: 50%;
+    height: 1px;
+
+    @include large {
+        display: none;
+    }
+}

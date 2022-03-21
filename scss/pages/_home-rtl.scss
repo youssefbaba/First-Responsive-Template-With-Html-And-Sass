@@ -1,0 +1,88 @@
+html {
+    direction: rtl;
+}
+
+$text-left:right;
+$text-right:left;
+
+// Start Header
+// .header 
+.header {
+
+    // .header  .header-logo
+    #{&}-logo {
+        @include large {
+            text-align: $text-left;
+        }
+    }
+}
+
+// End Header
+
+// .slider
+.slider {
+
+    // .slider blockquote 
+    blockquote {
+
+        // .slider blockquote::before
+        &::before {
+            content: "\f10e";
+        }
+
+        // .slider blockquote::after
+        &::after {
+            content: "\f10d";
+        }
+    }
+}
+
+// End Slider
+
+// .services
+.services {
+
+    // .services .services-item
+    #{&}-item {
+        @include medium {
+            text-align: $text-left;
+        }
+    }
+}
+
+// End Services
+
+// .team
+.team {
+
+    // .team .team-item
+    #{&}-item {
+        @include large {
+            text-align: $text-left;
+        }
+    }
+}
+
+// End Team
+
+// Start Footer 
+// .footer
+.footer {
+
+    // .footer .blog
+    .blog {
+        @include medium {
+            text-align: $text-left;
+        }
+    }
+
+    // .footer .details , .footer .contact
+    .details,
+    .contact {
+        @include medium {
+            text-align: $text-left;
+        }
+    }
+}
+
+// End Footer 

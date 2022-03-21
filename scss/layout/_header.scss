@@ -1,0 +1,174 @@
+// Start Header
+// .header 
+.header {
+    border-bottom: 1px solid $sixth-color;
+    position: relative;
+
+    // .dropdown
+    .dropdown {
+        position: absolute;
+        top: pxToRem(5px);
+        right: pxToRem(10px);
+        z-index: 2;
+
+        // .dropdown .dropbtn
+        .dropbtn {
+            color: $third-color;
+            background-color: $sixth-color;
+            width: pxToRem(90px);
+            padding: 0.75rem 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        // .dropdown .dropdown-content
+        &-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f1f1f1;
+            min-width: 120px;
+            overflow: auto;
+            z-index: 2;
+
+            // .dropdown .dropdown-content a
+            a {
+                display: block;
+                padding: 0.75rem 1rem;
+                color: $third-color;
+
+                // .dropdown .dropdown-content a:hover
+                &:hover {
+                    background-color: $sixth-color;
+                }
+            }
+
+            // .dropdown .dropdown-content.show
+            &.show {
+                display: block;
+            }
+        }
+    }
+
+    // .header  .container
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+    }
+
+    // .header  .header-logo
+    #{&}-logo {
+        line-height: 1;
+
+        @include medium {
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        @include large {
+            flex-basis: 30%;
+            text-align: $text-left;
+        }
+
+        // .header  .header-logo h1
+        h1 {
+            font-size: 2rem;
+            color: #505050;
+            text-transform: uppercase;
+        }
+
+        // .header  .header-logo p
+        p {
+            color: $second-color;
+            margin-top: 0.6rem;
+
+            @include medium {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            @include large {
+                margin-top: 0.6rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // .header  .header-hamburger
+    #{&}-hamburger {
+        width: 2.5rem;
+        background-color: $main-color;
+        padding: pxToRem(5px);
+        cursor: pointer;
+
+        @include medium {
+            display: none;
+        }
+
+        // .header  .header-hamburger span
+        span {
+            display: block;
+            background-color: $white-color;
+            height: 0.25rem;
+
+            // .header  .header-hamburger span:not(:last-child)
+            &:not(:last-child) {
+                margin-bottom: pxToRem(4px);
+            }
+        }
+    }
+
+    // .header .header-navbar
+    #{&}-navbar {
+        padding-top: 1rem;
+        flex-basis: 100%;
+        max-height: 0;
+        overflow: hidden;
+        @include transition(all 0.3s ease-out);
+
+        @include medium {
+            max-height: 100%;
+        }
+
+        @include large {
+            flex-basis: 70%;
+            padding-top: 0;
+        }
+
+        // .header .header-navbar-links
+        &-links {
+            background-color: $main-color;
+
+            @include medium {
+                display: flex;
+                text-align: center;
+                border-radius: pxToRem(10px);
+            }
+
+            // .header .header-navbar-links li
+            li {
+                font-size: 1.125rem;
+                flex: 1;
+            }
+
+            // .header .header-navbar-links a
+            a {
+                display: block;
+                color: $white-color;
+                text-transform: uppercase;
+                padding: 1.25rem 1rem;
+                @include transition(all 0.3s ease-out);
+
+                // .header .header-navbar-links a:hover
+                &:hover {
+                    color: #ee9395;
+                }
+            }
+        }
+    }
+}
+
+// End Header

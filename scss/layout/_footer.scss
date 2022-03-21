@@ -1,0 +1,149 @@
+// Start Footer 
+// .footer
+.footer {
+    background-color: $sixth-color;
+    color: $fourth-color;
+
+    // .footer .container
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include medium {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    // .footer  .section-title
+    .section-title {
+        color: $third-color;
+        margin-bottom: 1.25rem;
+    }
+
+    // .footer .blog
+    .blog {
+        @include medium {
+            text-align: $text-left;
+            flex-basis: 100%;
+        }
+
+        @include extraLarge {
+            flex-basis: calc((100% - 4rem) / 2);
+        }
+
+        // .footer .blog-item
+        &-item {
+            @include medium {
+                display: flex;
+                align-items: center;
+                gap: 1.25rem;
+            }
+
+            // .footer .blog-item .image
+            .image {
+                width: pxToRem(95px);
+                height: pxToRem(95px);
+
+                margin: auto {
+                    top: 0;
+                    bottom: 0;
+                }
+
+                // .footer .blog-item .image img
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            // .footer .blog-item .text
+            .text {
+                flex: 1;
+
+                // .footer .blog-item .text h4
+                h4 {
+                    color: $main-color;
+                    margin: 0.625rem 0;
+
+                    @include medium {
+                        margin-top: 0;
+                    }
+                }
+
+                // .footer .blog-item .text  p
+                p {
+                    line-height: 1.6;
+                }
+            }
+
+            // .footer .blog-item:not(:last-child)
+            &:not(:last-child) {
+                margin-bottom: 1.25rem;
+            }
+        }
+
+    }
+
+    // .footer .details , .footer .contact
+    .details,
+    .contact {
+        @include medium {
+            text-align: $text-left;
+            flex-basis: calc((100% - 2rem) / 2);
+        }
+
+        @include extraLarge {
+            flex-basis: calc((100% - 4rem) / 4);
+        }
+    }
+
+    // .footer .details
+    .details {
+
+        // .footer .details ul
+        ul {
+            line-height: 1.6;
+
+            // .footer .details ul:not(:last-child)
+            &:not(:last-child) {
+                margin-bottom: 1.25rem;
+            }
+
+            // .footer .details ul a
+            a {
+                color: $fourth-color;
+            }
+
+            // .footer .details ul email
+            .email {
+                color: $main-color;
+            }
+        }
+    }
+
+    // .footer .copyright
+    .copyright {
+        @include medium {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-basis: 100%;
+        }
+
+        padding-top: 2rem;
+        border-top: 1px solid #c3c3c3;
+
+        // .footer .copyright-text
+        &-text {
+            margin-bottom: 0.625rem;
+
+            @include medium {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// End Footer 

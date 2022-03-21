@@ -1,10 +1,242 @@
-$color:red;
+// Start Slider
+// .slider
+.slider {
 
-body {
-    background-color: $color;
+    // .slider blockquote 
+    blockquote {
+        color: $third-color;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.6;
+        width: 80%;
+
+        margin: auto {
+            top: 0;
+            bottom: 2rem;
+        }
+
+        // .slider blockquote::before
+        &::before {
+            content: "\f10d";
+            font: var(--fa-font-solid);
+            top: pxToRem(-10px);
+        }
+
+        // .slider blockquote::after
+        &::after {
+            content: "\f10e";
+            font: var(--fa-font-solid);
+            bottom: pxToRem(-5px);
+        }
+
+        // .slider blockquote::defore , .slider blockquote::after
+        &::before,
+        &::after {
+            font-size: 1rem;
+            position: relative;
+        }
+    }
+
+    // .slider .slider-image
+    #{&}-image {
+
+        // .slider .slider-image img 
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        // .slider .slider-image .bullets
+        .bullets {
+            display: flex;
+            justify-content: center;
+            gap: 0.7rem;
+            margin-top: 0.5rem;
+
+            // .slider .slider-image .bullets li
+            li {
+                width: 1rem;
+                height: 1rem;
+                background-color: #cecece;
+                border: 2px solid #cecece;
+                border-radius: 50%;
+                cursor: pointer;
+                @include transition(all 0.3s ease-in);
+
+                // .slider .slider-image .bullets li:hover , .slider .slider-image .bullets li:first-child
+                &:hover,
+                &:first-child {
+                    background-color: $white-color;
+                    border-color: #353535;
+                }
+            }
+        }
+    }
 }
 
-h1 {
-    font-size: 2rem;
-    color: white;
+// End Slider
+// Start Services
+// .services
+.services {
+
+    // .services .services-items
+    #{&}-items {
+        @include large {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+
+    // .services .services-item
+    #{&}-item {
+        padding: 1rem 0;
+        position: relative;
+
+        @include medium {
+            text-align: $text-left;
+        }
+
+        @include large {
+            flex: 1;
+            padding: 0;
+        }
+
+        // .services .services-item:not(:last-child)::before
+        &:not(:last-child)::before {
+            @extend %underline;
+        }
+
+        // .services .services-item-title
+        &-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.125rem;
+
+            @include medium {
+                flex-direction: row;
+            }
+
+            // .services .services-item-title h3
+            h3 {
+                line-height: 1.2;
+                color: $second-color;
+            }
+        }
+
+        // .services .services-item-desc
+        &-desc {
+            color: $fifth-color;
+            line-height: 1.6;
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        // .services .services-item-link
+        &-link {
+            color: $main-color;
+        }
+    }
 }
+
+// End Services
+
+// .team
+.team {
+
+    // .team .team-items 
+    #{&}-items {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include medium {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    // .team .team-item
+    #{&}-item {
+        text-align: center;
+
+        @include medium {
+            flex-basis: calc((100% - 2rem) / 2);
+        }
+
+        @include large {
+            flex-basis: calc((100% - 4rem) / 3);
+            text-align: $text-left;
+        }
+
+        @include extraLarge {
+            flex-basis: calc((100% - 6rem) / 4);
+        }
+
+        // .team .team-item img 
+        img {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+
+            @include medium {
+                width: 100%;
+            }
+        }
+
+        // .team .team-item-name
+        &-name {
+            line-height: 1.2;
+            color: $second-color;
+            margin-top: 0.9rem;
+
+            // .team .team-item-name span 
+            span {
+                font-weight: normal;
+            }
+        }
+
+        // .team .team-item-desc
+        &-desc {
+            color: $fifth-color;
+            line-height: 1.6;
+            margin: 0.5rem 0;
+        }
+
+        // .team .team-item-link
+        &-link {
+            color: $main-color;
+        }
+    }
+}
+
+// End Team
+// Start Gallery
+// .gallery
+.gallery {
+
+    // .gallery .gallery-items
+    #{&}-items {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include medium {
+            flex-direction: row;
+        }
+    }
+
+    // .gallery .gallery-item
+    #{&}-item {
+
+        // .gallery .gallery-item img
+        img {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
+
+// End Gallery
