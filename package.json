@@ -4,7 +4,7 @@
   "description": "First-Responsive-Template-With-Html-And-Sass",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass --recursive --watch scss/ --output css/"
+    "sass": "node-sass --recursive --watch  --source-map true --source-map-contents true  scss/ --output upload/css"
   },
   "repository": {
     "type": "git",
